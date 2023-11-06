@@ -63,18 +63,18 @@ class ca:
 
         # Declare instance attributes
         self.actions = []
-        self.menu = self.tr(u'PCE Services')
+        self.menu = self.tr(u'&Pce Services')
         # TODO: We are going to let the user set this up in a future iteration
         self.toolbar = self.iface.addToolBar(u'Pce Services')
         self.toolbar.setObjectName(u'Pce Services')
 
-        #print "** INITIALIZING ca"
+        # print "** INITIALIZING ca"
 
         self.pluginIsActive = False
         self.dockwidget = None
 
-
     # noinspection PyMethodMayBeStatic
+
     def tr(self, message):
         """Get the translation for a string using Qt translation API.
 
@@ -89,18 +89,17 @@ class ca:
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
         return QCoreApplication.translate('ca', message)
 
-
     def add_action(
-        self,
-        icon_path,
-        text,
-        callback,
-        enabled_flag=True,
-        add_to_menu=True,
-        add_to_toolbar=True,
-        status_tip=None,
-        whats_this=None,
-        parent=None):
+            self,
+            icon_path,
+            text,
+            callback,
+            enabled_flag=True,
+            add_to_menu=True,
+            add_to_toolbar=True,
+            status_tip=None,
+            whats_this=None,
+            parent=None):
         """Add a toolbar icon to the toolbar.
 
         :param icon_path: Path to the icon for this action. Can be a resource
@@ -163,7 +162,6 @@ class ca:
 
         return action
 
-
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
@@ -174,12 +172,12 @@ class ca:
             callback=self.run,
             parent=self.iface.mainWindow())
 
-    #--------------------------------------------------------------------------
+    # --------------------------------------------------------------------------
 
     def onClosePlugin(self):
         """Cleanup necessary items here when plugin dockwidget is closed"""
 
-        #print "** CLOSING ca"
+        # print "** CLOSING ca"
 
         # disconnects
         self.dockwidget.closingPlugin.disconnect(self.onClosePlugin)
@@ -192,11 +190,10 @@ class ca:
 
         self.pluginIsActive = False
 
-
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
 
-        #print "** UNLOAD ca"
+        # print "** UNLOAD ca"
 
         for action in self.actions:
             self.iface.removePluginMenu(
@@ -206,7 +203,7 @@ class ca:
         # remove the toolbar
         del self.toolbar
 
-    #--------------------------------------------------------------------------
+    # --------------------------------------------------------------------------
 
     def run(self):
         """Run method that loads and starts the plugin"""
@@ -214,7 +211,7 @@ class ca:
         if not self.pluginIsActive:
             self.pluginIsActive = True
 
-            #print "** STARTING ca"
+            # print "** STARTING ca"
 
             # dockwidget may not exist if:
             #    first run of plugin
