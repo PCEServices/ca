@@ -168,7 +168,7 @@ class ca:
         icon_path = ':/plugins/ca/icon.png'
         self.add_action(
             icon_path,
-            text=self.tr(u'ca'),
+            text=self.tr(u'Commande d\'accès'),
             callback=self.run,
             parent=self.iface.mainWindow())
 
