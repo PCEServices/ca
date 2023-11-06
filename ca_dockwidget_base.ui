@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>caDockWidgetBase</class>
+ <widget class="QDockWidget" name="caDockWidgetBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>235</width>
+    <height>207</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>524287</width>
+    <height>207</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ca</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="5" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>C3A</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="boutonC3A">
+        <property name="text">
+         <string>Créer la C3A</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="7" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>DFT</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>Créer un fichier vierge</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="boutonDFT_2">
+        <property name="text">
+         <string>Comparer la C3B avec les shapes REC</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <widget class="QComboBox" name="marche">
+      <item>
+       <property name="text">
+        <string>ALTITUDE</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>COVAGE</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>boutonC3A</sender>
+   <signal>clicked()</signal>
+   <receiver>caDockWidgetBase</receiver>
+   <slot>creationC3A()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>174</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>caDockWidgetBase</receiver>
+   <slot>copyNewFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boutonDFT_2</sender>
+   <signal>clicked()</signal>
+   <receiver>caDockWidgetBase</receiver>
+   <slot>comparaisonC3B()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>213</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>creationC3A()</slot>
+  <slot>copyNewFile()</slot>
+  <slot>comparaisonC3B()</slot>
+ </slots>
+</ui>
